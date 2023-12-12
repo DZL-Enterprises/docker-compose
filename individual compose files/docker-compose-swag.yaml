@@ -1,0 +1,28 @@
+---
+version: "2.1"
+services:
+  swag:
+    image: lscr.io/linuxserver/swag:latest
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=33
+      - PGID=33
+      - TZ=Etc/UTC
+      - URL=
+      - VALIDATION=http
+      - SUBDOMAINS= #optional
+      - CERTPROVIDER= #optional
+      - DNSPLUGIN=google-domains #optional
+      - PROPAGATION= #optional
+      - EMAIL= #optional
+      - ONLY_SUBDOMAINS=true #optional
+      - EXTRA_DOMAINS= #optional
+      - STAGING=false #optional
+    volumes:
+      - /localconfigpath:/config #replace localconfigpath with the path to your local config path
+    ports:
+      - 443:443
+      - 80:80 #optional
+    restart: unless-stopped
