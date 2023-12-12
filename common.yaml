@@ -1,0 +1,20 @@
+version: '3'
+services:
+  production:
+    build: .
+    network_mode: "host"
+    environment:
+      TZ: Etc/UTC
+    restart: always
+  staging:
+    build: .
+    network_mode: "host"
+    environment:
+      TZ: Etc/UTC
+    restart: unless-stopped
+  dev:
+    build: .
+    network_mode: "host"
+    environment:
+      TZ: Etc/UTC
+    restart: unless-stopped
