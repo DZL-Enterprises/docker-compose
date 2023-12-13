@@ -21,7 +21,7 @@ services:
       - EXTRA_DOMAINS= #optional
       - STAGING=false #optional
     volumes:
-      - /localconfigpath:/config #replace localconfigpath with the path to your local config path
+      - /your/local/config/path:/config #replace localconfigpath with the path to your local config path
     ports:
       - 443:443
       - 80:80 #optional
