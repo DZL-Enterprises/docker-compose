@@ -1,0 +1,30 @@
+---
+version: "3"
+services:
+  swag:
+    extends:
+      file: common-services.yaml
+      service: production
+    image: lscr.io/linuxserver/swag:latest
+    container_name: swag
+    cap_add:
+       - NET_ADMIN
+    environment:
+       - PUID=33
+       - PGID=33
+       - URL=
+       - VALIDATION=http
+       - SUBDOMAINS= #optional
+       - CERTPROVIDER= #optional
+       - DNSPLUGIN= #optional
+       - PROPAGATION= #optional
+       - EMAIL= #optional
+       - ONLY_SUBDOMAINS=true #optional
+       - EXTRA_DOMAINS= #optional
+       - STAGING=false #optional
+    volumes:
+       - /your/local/config/path:/config #replace /your/local/config/path with the path to your local configuration
+    ports:
+       - 443:443
+       - 80:80 #optional
+    restart: always
