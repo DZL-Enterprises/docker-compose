@@ -47,7 +47,6 @@ services:
       file: common-services.yaml
       service: staging
     image: mysql
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: notSecureChangeMe #replace notSecureChangeMe with your own password
   phpmyadmin:
