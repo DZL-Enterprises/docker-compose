@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb:10.6 #see README for information on mariadb and mysql packages
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: notSecureChangeMe # you must replace notSecureChangeMe with your own strong password
+
+  phpmyadmin:
+    image: phpmyadmin #see README for information about differant phpmyadmin packages
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=0 #see README for more information
