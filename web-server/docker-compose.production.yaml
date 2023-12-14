@@ -5,7 +5,6 @@ services:
     extends:
       file: common-services.yaml
       service: production
-    docker_mods: #add a modfication to SWAG container. Separate multiple mods with |. See README for list of available mods.
     image: lscr.io/linuxserver/swag:latest
     container_name: swag
     cap_add:
@@ -33,7 +32,6 @@ services:
     extends:
       file: common-services.yaml
       service: production
-    docker_mods: #add a modfication to SWAG container. Separate multiple mods with |. See README for list of available mods
     image: lscr.io/linuxserver/ldap-auth:latest
     container_name: ldap-auth
     environment:
