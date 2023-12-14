@@ -11,6 +11,7 @@ services:
     cap_add:
        - NET_ADMIN
     environment:
+       - DOCKER_MODS= #add a modfication to SWAG container. Separate multiple mods with |. See README for list of available mods.
        - PUID=33
        - PGID=33
        - URL=
@@ -36,6 +37,7 @@ services:
     image: lscr.io/linuxserver/ldap-auth:latest
     container_name: ldap-auth
     environment:
+      - DOCKER_MODS= #add a modfication to SWAG container. Separate multiple mods with |. See README for list of available mods.
       - FERNETKEY= #optional
       - CERTFILE= #optional
       - KEYFILE= #optional
@@ -58,4 +60,5 @@ services:
     ports:
       - 8080:80
     environment:
+      - DOCKER_MODS= #add a modfication to SWAG container. Separate multiple mods with |. See README for list of available mods.
       - PMA_ARBITRARY=1
